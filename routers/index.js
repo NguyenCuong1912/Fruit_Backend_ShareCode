@@ -1,5 +1,6 @@
 const express = require('express');
 const { accountRouter } = require('./Account.router');
+const { categoryRouter } = require('./Category.router');
 // const { checkoutRouter } = require('./Checkout.router');
 // const { productRouter } = require('./Product.router');
 
@@ -7,7 +8,7 @@ const { accountRouter } = require('./Account.router');
 
 const rootRouter = express.Router();
 rootRouter.use('/Account', accountRouter)
-// rootRouter.use('/Product', productRouter)
+rootRouter.use('/Category', categoryRouter)
 // rootRouter.use('/Checkout', checkoutRouter)
 module.exports = {
     rootRouter
