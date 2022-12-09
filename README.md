@@ -20,3 +20,33 @@ Method : Put gửi Password , Role , PhoneNumber
 
 -Delete : http://localhost:8080/api/Account/Delete/1  
 Method : Put
+
+# Category
+
+-Get http://localhost:8080/api/Category  
+Get all
+-Get Detail http://localhost:8080/api/Category/1  
+-Post http://localhost:8080/api/Category  
+Method Post : {CategoryName}
+-Put http://localhost:8080/api/1  
+Method PUT : {CategoryName}  
+-Delete http://localhost:8080/api/1  
+Method Put
+
+# Product
+
+{id , ProductName ,Description , Price , Discount , ImageProduct, TypeGender , IsActive}
+
+-AddProduct : http://localhost:8080/api/Product
+Method : Post gửi ProductName ,Description , Price , Discount , ImageProduct, TypeGender
+
+-GetAll : http://localhost:8080/api/Product
+Method : Get
+-GetAll : http://localhost:8080/api/Product?ProductName=cuong
+Method :Get tim kiem
+-GetDetail : http://localhost:8080/api/Product/1
+Method : Get
+
+-Update : http://localhost:8080/api/Product/1 Method : Put gửi ProductName ,Description , Price , Discount , ImageProduct, TypeGender
+
+-Delete : http://localhost:8080/api/Product/Delete/1 Method : Put
