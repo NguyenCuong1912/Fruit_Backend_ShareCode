@@ -9,8 +9,8 @@ const Func_Checkout = async (req, res) => {
             ListProduct.forEach(product => {
                 total += (product.Price * product.Quantity) - (product.Price * product.Quantity * product.Discount / 100);
             });
-            Checkout.create({
-                Account_ID, TotalMoney: total
+            const result = await Checkout.create({
+                Account_ID, TotalMoney: total.toString()
             }).then(async (data) => {
                 checkoutResult.Checkout = data;
                 checkoutResult.OrderProduct = [];
@@ -19,8 +19,8 @@ const Func_Checkout = async (req, res) => {
                         Product_ID: product.Product_ID,
                         Price: product.Price,
                         Quantity: product.Quantity,
-                        Checkout_ID: data.id,
-                        Discount: data.Discount
+                        Discount: product.Discount,
+                        Checkout_ID: data.id
                     })
                     await checkoutResult.OrderProduct.push(detailCheckout)
                 }
