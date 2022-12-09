@@ -50,3 +50,31 @@ Method : Get
 -Update : http://localhost:8080/api/Product/1 Method : Put gửi ProductName ,Description , Price , Discount , ImageProduct, TypeGender
 
 -Delete : http://localhost:8080/api/Product/Delete/1 Method : Put
+
+# Checkout
+
+Post : http://localhost:8080/api/Checkout
+gui => 
+{
+    "Account_ID" :2 ,
+    "ListProduct":[
+        {
+            "Product_ID" : 2,
+            "Price" : "100000",
+            "Quantity" : 4,
+            "Discount" : 10
+        },
+         {
+            "Product_ID" : 3,
+            "Price" : "100000",
+            "Quantity" : 4,
+            "Discount" : 10
+        }
+
+    ]
+
+}
+
+-Get : http://localhost:8080/api/Checkout
+
+-Get : http://localhost:8080/api/Checkout/Detail/13 Lấy danh sách đơn hàng đã đặt theo người dùng đăng nhập -Get :http:localhost:8080/api/Checkout/ByAccount/2
