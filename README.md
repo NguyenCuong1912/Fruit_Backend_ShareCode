@@ -35,10 +35,10 @@ Method Put
 
 # Product
 
-{id , ProductName ,Description , Price , Discount , ImageProduct, TypeGender , IsActive}
+{id ,Category_ID, ProductName ,Description , Price , Discount , ProductImage, IsActive}
 
 -AddProduct : http://localhost:8080/api/Product
-Method : Post gửi ProductName ,Description , Price , Discount , ImageProduct, TypeGender
+Method : Post gửi ProductName ,Description , Price , Discount , ImageProduct,
 
 -GetAll : http://localhost:8080/api/Product
 Method : Get
@@ -54,22 +54,22 @@ Method : Get
 # Checkout
 
 Post : http://localhost:8080/api/Checkout
-gui => 
+gui =>
 {
-    "Account_ID" :2 ,
-    "ListProduct":[
-        {
-            "Product_ID" : 2,
-            "Price" : "100000",
-            "Quantity" : 4,
-            "Discount" : 10
-        },
-         {
-            "Product_ID" : 3,
-            "Price" : "100000",
-            "Quantity" : 4,
-            "Discount" : 10
-        }
+"Account_ID" :2 ,
+"ListProduct":[
+{
+"Product_ID" : 2,
+"Price" : "100000",
+"Quantity" : 4,
+"Discount" : 10
+},
+{
+"Product_ID" : 3,
+"Price" : "100000",
+"Quantity" : 4,
+"Discount" : 10
+}
 
     ]
 
