@@ -67,12 +67,13 @@ const DeleteProduct = async (req, res) => {
 
 const UpdateProduct = async (req, res) => {
     const { file, body, detail } = req;
+    console.log("first", file)
     const { ProductName, Description, Price, Discount, Category_ID } = body;
     try {
-        let ImageProduct;
-        ImageProduct = detail.ImageProduct;
+        let ProductImage;
+        ProductImage = detail.ProductImage;
         if (file) {
-            ImageProduct = await file.path.replace(/\\/g, '/');
+            ProductImage = await file.path.replace(/\\/g, '/');
         }
         if (ProductName && Description && Price && Category_ID) {
             detail.ProductName = ProductName;
@@ -80,7 +81,7 @@ const UpdateProduct = async (req, res) => {
             detail.Price = Price;
             detail.Discount = Discount;
             detail.Category_ID = Category_ID;
-            detail.ImageProduct = ImageProduct;
+            detail.ProductImage = ProductImage;
             await detail.save();
             res.status(200).send(detail)
         } else {
