@@ -109,7 +109,7 @@ const FindDetailBill = async (req, res) => {
                 {
                     model: Product,
                     as: 'Product',
-                    attributes: ['ProductName', 'Discount', "ImageProduct", 'TypeGender'],
+                    attributes: ['ProductName', 'Discount', "ProductImage"],
                 }
             ],
             attributes: {
