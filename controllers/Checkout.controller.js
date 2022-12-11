@@ -58,7 +58,8 @@ const AllBill = async (req, res) => {
 const GetBillByID_User = async (req, res) => {
     const { id } = req.params;
     try {
-        Checkout.findAll({
+
+        const check = await Checkout.findAll({
             where: { Account_ID: id },
             attributes: {
                 exclude: ["Account_ID"]
@@ -74,7 +75,7 @@ const GetBillByID_User = async (req, res) => {
                         {
                             model: Product,
                             as: 'Product',
-                            attributes: ['ProductName', 'Price', 'Discount', "ImageProduct", "TypeGender"],
+                            attributes: ['ProductName', 'Price', "ProductImage"],
                         }
                     ],
                     attributes: {
