@@ -35,10 +35,10 @@ Method Put
 
 # Product
 
-{id ,Category_ID, ProductName ,Description , Price , Discount , ProductImage, IsActive}
+{id ,Category_ID, ProductName ,Description , Price , Discount , Origin , Unit, ProductImage, IsActive}
 
 -AddProduct : http://localhost:8080/api/Product
-Method : Post gửi ProductName ,Description , Price , Discount , ImageProduct,
+Method : Post gửi ProductName ,Description , Price , Discount , ImageProduct,Origin ,Unit
 
 -GetAll : http://localhost:8080/api/Product
 Method : Get
@@ -47,7 +47,7 @@ Method :Get tim kiem
 -GetDetail : http://localhost:8080/api/Product/1
 Method : Get
 
--Update : http://localhost:8080/api/Product/1 Method : Put gửi ProductName ,Description , Price , Discount , ImageProduct, TypeGender
+-Update : http://localhost:8080/api/Product/1 Method : Put gửi ProductName ,Description , Price , Discount , ImageProduct,Origin , Unit
 
 -Delete : http://localhost:8080/api/Product/Delete/1 Method : Put
 

@@ -3,11 +3,11 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const AddProduct = async (req, res) => {
     const { file, body } = req;
-    const { ProductName, Description, Price, Discount, Category_ID } = body;
+    const { ProductName, Description, Price, Discount, Origin, Unit, Category_ID } = body;
     try {
-        if (ProductName && Description && Price && file?.path && Category_ID) {
+        if (ProductName && Description && Origin && Unit && Price && file?.path && Category_ID) {
             const ProductImage = await file.path.replace(/\\/g, '/');
-            const newProduct = await Product.create({ ProductName, ProductImage, Description, Price, Discount, Category_ID });
+            const newProduct = await Product.create({ ProductName, ProductImage, Description, Origin, Unit, Price, Discount, Category_ID });
             res.status(200).send(newProduct)
         } else {
             res.status(403).send("Data is not enough");
@@ -68,14 +68,14 @@ const DeleteProduct = async (req, res) => {
 const UpdateProduct = async (req, res) => {
     const { file, body, detail } = req;
     console.log("first", file)
-    const { ProductName, Description, Price, Discount, Category_ID } = body;
+    const { ProductName, Description, Price, Discount, Origin, Unit, Category_ID } = body;
     try {
         let ProductImage;
         ProductImage = detail.ProductImage;
         if (file) {
             ProductImage = await file.path.replace(/\\/g, '/');
         }
-        if (ProductName && Description && Price && Category_ID) {
+        if (ProductName && Description && Price && Origin && Unit && Category_ID) {
             detail.ProductName = ProductName;
             detail.Description = Description;
             detail.Price = Price;

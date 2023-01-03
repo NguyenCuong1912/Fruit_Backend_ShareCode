@@ -29,6 +29,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
+      Origin: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      Unit: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       Category_ID: {
         allowNull: false,
         type: Sequelize.INTEGER,
