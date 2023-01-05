@@ -78,6 +78,8 @@ const UpdateProduct = async (req, res) => {
         if (ProductName && Description && Price && Origin && Unit && Category_ID) {
             detail.ProductName = ProductName;
             detail.Description = Description;
+            detail.Origin = Origin;
+            detail.Unit = Unit;
             detail.Price = Price;
             detail.Discount = Discount;
             detail.Category_ID = Category_ID;
